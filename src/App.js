@@ -1,20 +1,19 @@
+import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import 'antd/dist/antd.min.css'
+import { Login, Users, LoginPass } from './pages'
+import ROUTES from './routes'
+import Layout from './layout'
+
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path={ROUTES.LOGIN} element={<Layout />}>
+                    <Route index element={<Login />} />
+                    <Route element={<LoginPass />} path={ROUTES.LOGINPASS} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     )
 }
 

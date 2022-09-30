@@ -1,0 +1,39 @@
+#components-layout-demo-responsive .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.site-layout-sub-header-background {
+    background: #fff;
+}
+
+.site-layout-background {
+    background: #fff;
+    width: 100%;
+}
+.layout-main-block {
+    min-height: 950px;
+    overflow: hidden;
+}
+
+.content {
+    margin: 24px 24px 24px;
+}
+
+@media only screen and (max-width: 768px) {
+    .hideOnDesktop {
+        display: none;
+    }
+    .layout-main-block {
+        margin-top: 60px;
+    }
+    .content {
+        margin: 0px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .hideOnMobile {
+        display: block;
+    }
+}
