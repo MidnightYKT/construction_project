@@ -133,7 +133,7 @@ const expandedRowRender = () => {
     for (let i = 0; i < 3; i += 1) {
         data.push({
             key: i,
-            date: '2014-12-24 23:12:00',
+            date: 'Планирование территории',
             name: 'This is production name',
             upgradeNum: 'Upgraded: 56',
         })
@@ -141,16 +141,29 @@ const expandedRowRender = () => {
     return (
         <ProTable
             columns={[
-                { title: 'Date', dataIndex: 'date', key: 'date' },
-                { title: 'Name', dataIndex: 'name', key: 'name' },
-                { title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+                { title: 'Наименование работ', dataIndex: 'date', key: 'date' },
                 {
-                    title: 'Action',
-                    dataIndex: 'operation',
-                    key: 'operation',
-                    valueType: 'option',
-                    render: () => [<a key="Pause">Pause</a>, <a key="Stop">Stop</a>],
+                    title: 'Удельные веса укрупненных конструктивных элементов по сб. №28, %',
+                    dataIndex: 'name',
+                    key: 'name',
                 },
+                {
+                    title: 'Степень готовности фактическая, %',
+                    dataIndex: 'upgradeNum',
+                    key: 'upgradeNum',
+                },
+                { title: 'Сроки выполнения', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+                { title: 'Подрядчики', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+                { title: 'Всего по сметам', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+                { title: 'Договорная', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+                { title: 'Оплачено (аванс)', dataIndex: 'upgradeNum', key: 'upgradeNum' },
+                // {
+                //     title: 'Action',
+                //     dataIndex: 'operation',
+                //     key: 'operation',
+                //     valueType: 'option',
+                //     // render: () => [<a key="Pause">Pause</a>, <a key="Stop">Stop</a>],
+                // },
             ]}
             headerTitle={false}
             search={false}
