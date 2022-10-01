@@ -11,6 +11,7 @@ function App() {
                 <Route path={ROUTES.LOGIN} element={<Layout />}>
                     <Route index element={<Login />} />
                     <Route element={<LoginPass />} path={ROUTES.LOGINPASS} />
+                    <Route element={<Users />} path={ROUTES.USERS} />
                 </Route>
             </Routes>
         </BrowserRouter>
