@@ -6,6 +6,7 @@ import arEGIntl from 'antd/es/locale/ru_RU'
 import 'moment/locale/ru'
 
 // import { useGetCityOrderQuery, useGetStatsCourierBoolQuery } from '../../../service/CompanyService'
+//Test got flow init
 
 const tableListDataSource = []
 
