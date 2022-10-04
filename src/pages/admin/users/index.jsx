@@ -8,39 +8,23 @@ import 'moment/locale/ru'
 // import { useGetCityOrderQuery, useGetStatsCourierBoolQuery } from '../../../service/CompanyService'
 
 const tableListDataSource = []
-const creators = ['1', '2', '3', '4', '5']
-
-const statusMap = {
-    0: {
-        color: 'blue',
-        text: 'text1',
-    },
-    1: {
-        color: 'green',
-        text: 'text2',
-    },
-    2: {
-        color: 'volcano',
-        text: 'text3',
-    },
-    3: {
-        color: 'red',
-        text: 'text4',
-    },
-    4: {
-        color: '',
-        text: 'text5',
-    },
-}
 
 for (let i = 0; i < 10; i += 1) {
     tableListDataSource.push({
         key: i,
         name: 'AppName',
-        containers: Math.floor(Math.random() * 20),
-        creator: creators[Math.floor(Math.random() * creators.length)],
-        status: statusMap[Math.floor(Math.random() * 10) % 5],
-        createdAt: Date.now() - Math.floor(Math.random() * 100000),
+        weight: '7',
+        degree: 4,
+        timing: '22.12.2023',
+        createdAt: 'ИП Игнатьева А.А.',
+        estimate: '',
+        negotiable: '5.100.000',
+        paid: '2.000.000',
+
+        // containers: Math.floor(Math.random() * 20),
+        // creator: creators[Math.floor(Math.random() * creators.length)],
+        // status: statusMap[Math.floor(Math.random() * 10) % 5],
+        // createdAt: Date.now() - Math.floor(Math.random() * 100000),
     })
 }
 
@@ -56,20 +40,20 @@ const columns = [
         children: [
             {
                 title: 'Удельные веса укрупненных конструктивных элементов по сб. №28, %',
-                dataIndex: 'years',
-                key: 'years',
+                dataIndex: 'weight',
+                key: 'weight',
                 width: 100,
             },
             {
                 title: 'Степень готовности фактическая, %',
-                dataIndex: 'months',
-                key: 'months',
+                dataIndex: 'degree',
+                key: 'degree',
                 width: 100,
             },
             {
                 title: 'Сроки выполнения',
-                dataIndex: 'months',
-                key: 'months',
+                dataIndex: 'timing',
+                key: 'timing',
                 width: 100,
             },
         ],
@@ -83,7 +67,7 @@ const columns = [
                 </Tooltip>
             </>
         ),
-        width: 140,
+        width: 110,
         key: 'since',
         dataIndex: 'createdAt',
         valueType: 'date',
@@ -94,20 +78,20 @@ const columns = [
         children: [
             {
                 title: 'Всего по сметам',
-                dataIndex: 'years',
-                key: 'years',
+                dataIndex: 'estimate',
+                key: 'estimate',
                 width: 100,
             },
             {
                 title: 'Договорная',
-                dataIndex: 'months',
-                key: 'months',
+                dataIndex: 'negotiable',
+                key: 'negotiable',
                 width: 100,
             },
             {
                 title: 'Оплачено (аванс)',
-                dataIndex: 'months',
-                key: 'months',
+                dataIndex: 'paid',
+                key: 'paid',
                 width: 100,
             },
         ],
@@ -117,14 +101,6 @@ const columns = [
         width: 120,
         key: 'option',
         valueType: 'option',
-        // render: () => [
-        //     <a key="1">链路</a>,
-        //     <a key="2">报警</a>,
-        //     <a key="3">监控</a>,
-        //     <a key="4">
-        //         <EllipsisOutlined />
-        //     </a>,
-        // ],
     },
 ]
 
@@ -194,9 +170,9 @@ const Users = () => {
                     })
                 }}
                 rowKey="key"
+                scroll={{ x: 800 }}
                 pagination={{
                     pageSize: 5,
-                    showQuickJumper: true,
                 }}
                 expandable={{ expandedRowRender }}
                 search={false}
