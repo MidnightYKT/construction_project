@@ -5,6 +5,12 @@ import { GiPlagueDoctorProfile } from 'react-icons/gi'
 const ADMIN = (navigate) => {
     return [
         {
+            label: 'Информация',
+            key: 'submenu-1',
+            icon: <BsPeople />,
+            onClick: () => navigate(ROUTES.BUILD),
+        },
+        {
             label: 'Пользователи',
             key: 'submenu-2',
             icon: <BsPeople />,

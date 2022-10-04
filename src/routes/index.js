@@ -4,6 +4,7 @@ const ROUTES = {
     REGISTRATION: '/registration',
     FORGOT_PASSWORD: '/forgot-password',
     PROFILE: '/profile',
+    BUILD: '/build',
     USERS: '/users',
 }
 

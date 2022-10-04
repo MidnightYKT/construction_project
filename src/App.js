@@ -1,6 +1,6 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import 'antd/dist/antd.min.css'
-import { Login, Users, LoginPass } from './pages'
+import { Login, Build, Users, LoginPass } from './pages'
 import ROUTES from './routes'
 import Layout from './layout'
 
@@ -11,6 +11,7 @@ function App() {
                 <Route path={ROUTES.LOGIN} element={<Layout />}>
                     <Route index element={<Login />} />
                     <Route element={<LoginPass />} path={ROUTES.LOGINPASS} />
+                    <Route element={<Build />} path={ROUTES.BUILD} />
                     <Route element={<Users />} path={ROUTES.USERS} />
                 </Route>
             </Routes>
